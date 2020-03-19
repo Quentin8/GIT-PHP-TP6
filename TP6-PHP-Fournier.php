@@ -8,9 +8,10 @@
         private $nom;
         private $nombreTitres;
         const constante = "Nombre d'équipe :";
-        static $nombreEquipe;
+        static $nombreEquipe = 0;
         function display(){
-            echo "L'équipe " . $this->nom . " a " . $this->nombreTitres . " de titres\n";
+            echo "L'équipe " . $this->nom . " a " . $this->nombreTitres . " de titres<br>";
+            echo self::constante . self::getNbEquipes() ."\n" ;
         }
         function getName(){
             return $this->nom;
@@ -33,7 +34,7 @@
 
         function __destruct()
         {
-           echo "Destructor\n";
+           echo "Destructor<br>";
         }
         static function getNbEquipes(){
             return self::$nombreEquipe;
@@ -46,11 +47,14 @@
     $e1->display();*/
     echo "<h3>Question 3</h3>";
     $e2 = new equipe();
-    $e2->setName("Equipe_2");
-    $e2->setNTitres(0);
+    $e3 = new equipe();
+    $e4 = new equipe();
+    $e5 = new equipe();
+    $e2->setName("PSG");
+    $e2->setNTitres(15);
     $e2->display();
-    echo "<h3>Question 9</h3>";
-    echo $e2::constante . $e2->getNbTitres() ;
+
+
 
 
 ?>
