@@ -56,11 +56,44 @@
 
 
 ?>
+<form method="post">
+    Nom : <input type="text" name="nom">
+    Prenom : <input type="text" name="prenom">
+    Mail : <input type="text" name="mail">
+    Age : <select name="age">
+        <option value="">--Age--</option>
+        <option value="0-20">0-20</option>
+        <option value="20-40">24-40</option>
+        <option value="41-60">41-60</option>
+        <option value="60+">60 et +</option>
+    </select> <br> <br>
+    <p>Monsieur : <input type="radio" name="sex" value="Monsieur"> Madame : <input type="radio" name="sex" value="Madame"></p>
+    <button value="submit" name="sub">Submit</button>
+</form>
+
 <?php
-    class Formulaire {
-        function __construct($fichier, $method)
+    class recup {
+        private $nom;
+        private $prenom;
+        private $mail;
+        private $age;
+        function __construct()
         {
-            echo "<form method='$method'></form>";
+            $this->nom = $_POST['nom'];
+            $this->prenom = $_POST['prenom'];
+            $this->mail = $_POST['mail'];
+            $this->age = $_POST['age'];
+        }
+        function display(){
+            echo $this->nom;
+            echo $this->prenom;
+            echo $this->mail;
+            echo $this->age;
         }
     }
+    if(isset($_POST['sub'])){
+        $recupForm = new recup();
+        $recupForm->display();
+    }
+
 ?>
