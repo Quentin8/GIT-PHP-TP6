@@ -77,18 +77,28 @@
         private $prenom;
         private $mail;
         private $age;
+        private $sex;
         function __construct()
         {
-            $this->nom = $_POST['nom'];
-            $this->prenom = $_POST['prenom'];
-            $this->mail = $_POST['mail'];
-            $this->age = $_POST['age'];
+
+        }
+        function getName(){
+            return $this->nom = $_POST['nom'];
+        }
+        function getPrenom(){
+            return $this->prenom = $_POST['prenom'];
+        }
+        function getMail(){
+            return  $this->mail = $_POST['mail'];
+        }
+        function getAge(){
+            return $this->age = $_POST['age'];
         }
         function display(){
-            echo $this->nom;
-            echo $this->prenom;
-            echo $this->mail;
-            echo $this->age;
+            echo "Bonjour " . $this->getSex()." "  . $this->getName() . " " . $this->getPrenom() . " Ton mail est : " . $this->getMail() . " et tu as : " . $this->getAge() . " ans." . "<br>";
+        }
+        function getSex(){
+            return $this->sex = $_POST['sex'];
         }
     }
     if(isset($_POST['sub'])){
