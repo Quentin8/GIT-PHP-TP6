@@ -55,6 +55,12 @@
     $e2->display();
 
 
-
-
+?>
+<?php
+    class Formulaire {
+        function __construct($fichier, $method)
+        {
+            echo "<form method='$method'></form>";
+        }
+    }
 ?>
