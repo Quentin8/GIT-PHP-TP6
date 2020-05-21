@@ -57,11 +57,11 @@
 
 ?>
 <form method="post">
-    Nom : <input type="text" name="nom">
-    Prenom : <input type="text" name="prenom">
-    Mail : <input type="text" name="mail">
-    Age : <select name="age">
-        <option value="">--Age--</option>
+    Nom : <input type="text" name="nom" required>
+    Prenom : <input type="text" name="prenom" required>
+    Mail : <input type="text" name="mail" required>
+    Age : <select name="age" required>
+        <option value="" >--Age--</option>
         <option value="0-20">0-20</option>
         <option value="20-40">24-40</option>
         <option value="41-60">41-60</option>
@@ -102,8 +102,11 @@
         }
     }
     if(isset($_POST['sub'])){
-        $recupForm = new recup();
-        $recupForm->display();
+        if(isset($_POST['sex'])){
+            $recupForm = new recup();
+            $recupForm->display();
+        }
+
     }
 
 ?>
